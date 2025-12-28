@@ -44,7 +44,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 5%;
+    padding: 0px 3%;
     max-width: 1400px;
     margin: 0 auto;
 }
@@ -83,14 +83,14 @@ header {
 
 .hero {
     height: 100vh;
-    background: url('https://images.unsplash.com/photo-1563970998847-0983c22c4883?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background: url('../img/fondo.png'); 
     background-size: cover;
     background-position: center;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 80px 10% 0;
+    padding-top: 80px;
 }
 
 .overlay {
@@ -326,4 +326,53 @@ footer { background-color: #001a20; padding-top: 80px; position: relative; }
     .tiger-pattern h2 { font-size: 2.2rem; }
     .btn-event { width: 100%; padding: 15px; font-size: 1.1rem; }
     .footer-map { height: 300px; }
+}
+
+/* --- CINTA INFINITA (MARQUEE) --- */
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--azul-profundo);
+    padding: 20px 0;
+    border-top: 2px solid var(--amarillo-mostaza);
+    border-bottom: 2px solid var(--amarillo-mostaza);
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    gap: 20px;
+    /* 120s para que con 31 fotos pase suave y se aprecie */
+    animation: scroll 120s linear infinite; 
+}
+
+.marquee-track img {
+    height: 250px;
+    width: auto;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.marquee-track img:hover {
+    transform: scale(1.05);
+    border-color: var(--amarillo-mostaza);
+    z-index: 10;
+    cursor: pointer;
+}
+
+/* Pausar si se pone el mouse encima */
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } 
+}
+
+@media (max-width: 768px) {
+    .marquee-track img {
+        height: 180px;
+    }
 }
