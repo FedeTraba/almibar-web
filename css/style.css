@@ -264,10 +264,25 @@ footer { background-color: #001a20; padding-top: 80px; position: relative; }
 .contact-data i { color: var(--amarillo-mostaza); font-size: 1.4rem; width: 30px; text-align: center; transition: var(--transicion-suave); }
 .contact-data p:hover i.bounce { animation: bounce 0.6s; }
 
+/* ESTO ES LO QUE TE FALTA: El contenedor padre */
+.social-icons {
+    display: flex;       /* ¡Obligatorio para que funcione gap! */
+    gap: 15px;           /* Ahora sí va a separar los botones */
+    flex-wrap: wrap;     /* Para que bajen si no entran en el celular */
+    margin-top: 20px;    /* Un poco de aire arriba */
+}
+
+/* TUS ESTILOS DE BOTONES (Esto déjalo igual, ya lo tienes) */
 .social-icons a {
-    display: inline-flex; align-items: center; gap: 12px;
-    background: rgba(255,255,255,0.05); padding: 12px 25px; border-radius: 50px;
-    color: var(--blanco); font-weight: 600; border: 1px solid rgba(255,255,255,0.1);
+    display: inline-flex; 
+    align-items: center; 
+    gap: 12px;
+    background: rgba(255,255,255,0.05); 
+    padding: 12px 25px; 
+    border-radius: 50px;
+    color: var(--blanco); 
+    font-weight: 600; 
+    border: 1px solid rgba(255,255,255,0.1);
 }
 .social-icons a:hover { background: var(--amarillo-mostaza); color: var(--azul-petroleo); border-color: var(--amarillo-mostaza); transform: translateX(5px); }
 
